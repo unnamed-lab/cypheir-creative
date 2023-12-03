@@ -1,0 +1,225 @@
+.cyp-row {
+  --cyp-gutter-x: 1.5rem;
+  --cyp-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--cyp-gutter-y));
+  margin-right: calc(-0.5 * var(--cyp-gutter-x));
+  margin-left: calc(-0.5 * var(--cyp-gutter-x));
+}
+.cyp-row * {
+  width: 100%;
+  max-width: 100%;
+  margin-top: var(--cyp-gutter-y);
+}
+
+.container {
+  --cyp-gutter-x: 1.5rem;
+  --cyp-gutter-y: 0;
+  width: 100%;
+  padding: 0 calc(0.5 * var(--cyp-gutter-x));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.col {
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .col-md {
+    flex: 1 0 0%;
+  }
+  .col-md-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .col-md-11 {
+    flex: 0 0 auto;
+    width: 91.6666666667%;
+  }
+  .col-md-10 {
+    flex: 0 0 auto;
+    width: 83.3333333333%;
+  }
+  .col-md-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .col-md-8 {
+    flex: 0 0 auto;
+    width: 66.6666666667%;
+  }
+  .col-md-7 {
+    flex: 0 0 auto;
+    width: 58.3333333333%;
+  }
+  .col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .col-md-5 {
+    flex: 0 0 auto;
+    width: 41.6666666667%;
+  }
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: 33.3333333333%;
+  }
+  .col-md-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .col-md-2 {
+    flex: 0 0 auto;
+    width: 16.6666666667%;
+  }
+  .col-md-1 {
+    flex: 0 0 auto;
+    width: 8.3333333333%;
+  }
+}
+@media (min-width: 992px) {
+  .col-lg {
+    flex: 1 0 0%;
+  }
+  .col-lg-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .col-lg-11 {
+    flex: 0 0 auto;
+    width: 91.6666666667%;
+  }
+  .col-lg-10 {
+    flex: 0 0 auto;
+    width: 83.3333333333%;
+  }
+  .col-lg-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .col-lg-8 {
+    flex: 0 0 auto;
+    width: 66.6666666667%;
+  }
+  .col-lg-7 {
+    flex: 0 0 auto;
+    width: 58.3333333333%;
+  }
+  .col-lg-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .col-lg-5 {
+    flex: 0 0 auto;
+    width: 41.6666666667%;
+  }
+  .col-lg-4 {
+    flex: 0 0 auto;
+    width: 33.3333333333%;
+  }
+  .col-lg-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .col-lg-2 {
+    flex: 0 0 auto;
+    width: 16.6666666667%;
+  }
+  .col-lg-1 {
+    flex: 0 0 auto;
+    width: 8.3333333333%;
+  }
+}
+
+:root {
+  --heading-space: 0.15em;
+  --heading-font: 1.75em;
+}
+@media (max-width: 767px) {
+  :root {
+    --heading-space: 0.11em;
+    --heading-font: 1.5em;
+  }
+}
+:root * {
+  font-family: "Poppins", "Century Gothic", sans-serif;
+}
+:root p {
+  font-size: 13px;
+  font-weight: 400;
+}
+:root h1 {
+  font-size: var(--heading-font);
+  margin-block-start: var(--heading-space);
+  margin-block-end: var(--heading-space);
+}
+:root h2 {
+  font-size: calc(var(--heading-font) - 0.162em);
+  margin-block-start: calc(var(--heading-space) / 0.9);
+  margin-block-end: calc(var(--heading-space) / 0.9);
+}
+:root h3 {
+  font-size: calc(var(--heading-font) - 0.243em);
+  margin-block-start: calc(var(--heading-space) / 0.8);
+  margin-block-end: calc(var(--heading-space) / 0.8);
+}
+:root h4 {
+  font-size: calc(var(--heading-font) - 0.486em);
+  margin-block-start: calc(var(--heading-space) / 0.7);
+  margin-block-end: calc(var(--heading-space) / 0.7);
+}
+:root h5 {
+  font-size: calc(var(--heading-font) - 0.6075em);
+  margin-block-start: calc(var(--heading-space) / 0.6);
+  margin-block-end: calc(var(--heading-space) / 0.6);
+}
+:root h6 {
+  font-size: calc(var(--heading-font) - 0.648em);
+  margin-block-start: calc(var(--heading-space) / 0.5);
+  margin-block-end: calc(var(--heading-space) / 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: 6px;
+  max-width: 100dvw;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+div {
+  padding: 0;
+}
+
+img {
+  width: inherit;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: none;
+  color: #6c757d;
+  transition: all 500ms linear;
+}
+a:hover {
+  color: #343a40;
+}
+a:active {
+  color: #88d6fd;
+}
+a:focus {
+  color: #1ca7ec;
+}
+
+li {
+  list-style: none;
+}
+
+/*# sourceMappingURL=main.css.map */

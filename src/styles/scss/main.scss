@@ -1,2 +1,47 @@
 @use "./custom" as *;
+@use "./components/typography" as *;
 
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: 6px;
+    max-width: 100dvw;
+    min-height: 100dvh;
+    overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+}
+
+div {
+  padding: 0;
+}
+
+img {
+    width: inherit;
+}
+
+a {
+    font-weight: 500;
+    text-decoration: none;
+    color: $g-600;
+    transition: all 500ms linear;
+
+    &:hover {
+        color: $g-800;
+    }
+
+    &:active {
+        color: $cypheir-sub;
+    }
+
+    &:focus {
+        color: $cypheir-main;
+    }
+}
+
+li {
+    list-style: none;
+}

@@ -1,5 +1,5 @@
 function Footer() {
-  return <><h3>Footer sectiion</h3></>;
+  return <></>;
 }
 
 export default Footer;
