@@ -1,0 +1,59 @@
+{
+  "name": "cypheir-creative",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "compile:sass": "sass --watch src/styles/scss:src/styles/css"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.2",
+    "postcss": "^8.4.32",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^6.20.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react": "^4.2.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "sass": "^1.69.5",
+    "vite": "^5.0.0"
+  },
+  "description": "Cypheir Creative is an archive of web designs and components where developers can explore, find inspiration, and access source codes for various web elements. The project is designed to be an open-source platform that encourages creativity, learning, and collaboration among developers.",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unnamed-lab/cypheir-creative.git"
+  },
+  "keywords": [
+    "cypheir",
+    "cypheir",
+    "creative",
+    "unnamed",
+    "open",
+    "source",
+    "web",
+    "design",
+    "web",
+    "development"
+  ],
+  "author": "Anuoluwa S. Adebayo (Unnamed)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unnamed-lab/cypheir-creative/issues"
+  },
+  "homepage": "https://github.com/unnamed-lab/cypheir-creative#readme"
+}
