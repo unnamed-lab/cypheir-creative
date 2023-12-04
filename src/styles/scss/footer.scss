@@ -1,0 +1,36 @@
+@use "./custom"  as *;
+
+.footer {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+    margin: 12px 3rem 0;
+    border-top: 1px solid $g-600;
+    
+
+    .footer-credits {
+        text-align: center;
+        font-size:16px;
+        font-weight: 400;
+
+        span {
+            font-weight: 500;
+            color: $cypheir-main;
+        }
+    }
+
+    .footer-social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: auto;
+
+        .social-icon {
+            margin: auto 16px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
