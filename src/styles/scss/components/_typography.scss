@@ -1,1 +1,49 @@
-@use '../custom' as *;
+@use "../custom" as *;
+@use "./mixins" as *;
+
+:root {
+  --heading-space: 0.15em;
+  --heading-font: 1.75em;
+
+  @include responsive(mobile) {
+    --heading-space: 0.11em;
+    --heading-font: 1.5em;
+  }
+  * {
+    font-family: "Poppins", "Century Gothic", sans-serif;
+  }
+  p {
+    font-size: 13px;
+    font-weight: 400;
+  }
+  h1 {
+    font-size: var(--heading-font);
+    margin-block-start: var(--heading-space);
+    margin-block-end: var(--heading-space);
+  }
+  h2 {
+    font-size: calc(var(--heading-font) - 0.162em);
+    margin-block-start: calc(var(--heading-space) / 0.9);
+    margin-block-end: calc(var(--heading-space) / 0.9);
+  }
+  h3 {
+    font-size: calc(var(--heading-font) - (0.162em * 1.5));
+    margin-block-start: calc(var(--heading-space) / 0.8);
+    margin-block-end: calc(var(--heading-space) / 0.8);
+  }
+  h4 {
+    font-size: calc(var(--heading-font) - (0.162em * 3));
+    margin-block-start: calc(var(--heading-space) / 0.7);
+    margin-block-end: calc(var(--heading-space) / 0.7);
+  }
+  h5 {
+    font-size: calc(var(--heading-font) - (0.162em * 3.75));
+    margin-block-start: calc(var(--heading-space) / 0.6);
+    margin-block-end: calc(var(--heading-space) / 0.6);
+  }
+  h6 {
+    font-size: calc(var(--heading-font) - (0.162em * 4));
+    margin-block-start: calc(var(--heading-space) / 0.5);
+    margin-block-end: calc(var(--heading-space) / 0.5);
+  }
+}

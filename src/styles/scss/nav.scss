@@ -1,0 +1,117 @@
+@use "./custom" as *;
+@use "./components/mixins" as *;
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 100dvw;
+  padding: 8px 1.5rem;
+  width: -webkit-fill-available;
+  box-shadow: 0 0.01px 1px $g-700;
+  transition: all 1s linear;
+
+  .nav-brand {
+    max-width: 6rem;
+
+    .nav-brand--logo {
+      width: 100%;
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    margin-left: auto;
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 1rem;
+      padding-inline-start: 0;
+
+      .menu-option {
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        .nav-link {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .menu-backdrop {
+      display: none;
+    }
+
+    @include responsive(mobile) {
+      //   position: absolute;
+      //   height: 100dvh;
+      //   display: flex;
+      //   margin-left: auto;
+      //   right: 0;
+      //   top: 0;
+
+      .menu-toggle {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 2.1rem;
+        height: 2.1rem;
+        outline: 2px solid $g-500;
+        border-radius: 8px;
+
+        .bar {
+          background-color: $g-500;
+          width: 70%;
+          height: 2px;
+          margin: 2px 0;
+        }
+      }
+
+      .menu-list {
+        position: absolute;
+        display: none;
+        background-color: #fff;
+        padding: 0.6rem .75rem;
+        border-radius: 12px;
+        top: 12%;
+        left: 50%;
+        flex: 1;
+        z-index: 99;
+        width: 80dvw;
+        margin: 0;
+        transform: translate(-50%, 0px);
+        box-shadow: 0 1px 5px $g-700;
+        transition: all 1s linear;
+        &.show {
+          display: flex;
+        }
+      }
+
+      .menu-backdrop {
+        position: absolute;
+        display: none;
+        z-index: 30;
+        top: 0;
+        right: 0;
+        width: 100dvw;
+        height: 100%;
+        background-color: transparent;
+        opacity: 10%;
+        backdrop-filter: blur(6px);
+
+        &.show {
+          display: block;
+        }
+      }
+    }
+  }
+}
