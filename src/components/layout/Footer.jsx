@@ -9,7 +9,7 @@ function Footer({ getTheme }) {
 
   return (
     <>
-      <footer className={`footer ${themeMode}`}>
+      <footer className={`footer ${getTheme}`}>
         <div className="footer-credits">
           Copyright &copy;{year} All rights reserved. Made by{" "}
           <span>Unnamed</span>, <span>Cypheir</span> and many others with love.
