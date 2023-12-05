@@ -1,7 +1,11 @@
+import app from "../styles/css/app.module.css";
+
 function Home() {
   return (
     <>
-      <h1>Home page!</h1>
+      <main className={app.main_body}>
+
+      </main>
     </>
   );
 }

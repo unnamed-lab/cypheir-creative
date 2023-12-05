@@ -4,28 +4,48 @@ import gitHub from "../../assets/icons/github.svg";
 import globe from "../../assets/icons/globe.svg";
 import discord from "../../assets/icons/discord.svg";
 
-function Footer() {
+function Footer({ getTheme }) {
   const year = new Date().getFullYear();
 
   return (
     <>
-      <footer className="footer">
+      <footer className={`footer ${themeMode}`}>
         <div className="footer-credits">
           Copyright &copy;{year} All rights reserved. Made by{" "}
           <span>Unnamed</span>, <span>Cypheir</span> and many others with love.
           💙
         </div>
         <div className="footer-social">
-          <a href="#" className="social-icon">
+          <a
+            href="#"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="social-icon"
+          >
             <img src={xLogo} alt="X/Twitter" />
           </a>
-          <a href="#" className="social-icon">
+          <a
+            href="#"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="social-icon"
+          >
             <img src={discord} alt="Discord" />
           </a>
-          <a href="#" className="social-icon">
+          <a
+            href="https://github.com/unnamed-lab/cypheir-creative"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="social-icon"
+          >
             <img src={gitHub} alt="GitHub" />
           </a>
-          <a href="#" className="social-icon">
+          <a
+            href="#"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="social-icon"
+          >
             <img src={globe} alt="Web" />
           </a>
         </div>

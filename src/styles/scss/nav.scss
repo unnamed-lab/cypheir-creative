@@ -6,29 +6,125 @@
   flex-wrap: wrap;
   align-items: center;
   max-width: 100dvw;
-  padding: 8px 1.5rem;
+  padding: 2px 1.5rem;
   width: -webkit-fill-available;
   box-shadow: 0 0.01px 1px $g-700;
+  background-color: $bg-color;
+  color: $font-colour;
   transition: all 1s linear;
 
+  &.dark {
+    @include theme-color($dark-theme: true);
+    transition: all 500ms ease-in-out 300ms;
+  }
+
   .nav-brand {
+    align-self: center;
     max-width: 6rem;
+    margin: auto;
 
     .nav-brand--logo {
       width: 100%;
+      transition: all 500ms linear 200ms;
+    }
+  }
+
+  .nav-theme-setting {
+    padding: 0 0.25rem;
+    max-width: 4rem;
+    display: flex;
+    height: 1.5rem;
+
+    .theme-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background-color: $g-400-trans;
+      width: 3rem;
+      padding: 4px;
+      border-radius: 18px;
+      box-shadow: 0 0 0.5px $g-200-trans, inset 0 1px 1.5px $g-600-trans;
+      transition: all 500ms linear;
+
+      @include responsive(mobile) {
+        width: 1rem;
+      }
+
+      &.dark {
+        background-color: $g-700-trans;
+        box-shadow: 0 0 0.5px $g-200-trans, inset 0 1px 1.5px $g-800-trans;
+
+        .theme-btn--effect {
+          left: 32px;
+          display: block;
+          box-shadow: 0.2px 0.5px 1px $g-600-trans,
+            inset -0.5px 0px 2px $g-500-trans !important;
+
+          @include responsive(mobile) {
+            left: 2px;
+          }
+          .theme-icon {
+            display: block;
+            @include theme-icon($light-theme: false);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+
+      input[type="checkbox"] {
+        display: none;
+        width: -webkit-fill-available;
+      }
+
+      .theme-btn--effect {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        padding: 3px;
+        background-color: $white;
+        border-radius: 50%;
+        transition: all 1s ease-in-out 300ms;
+
+        .theme-icon {
+          width: 14px;
+          height: 14px;
+          transition: all 500ms cubic-bezier(0.6, -0.28, 0.74, 0.05) 100ms;
+        }
+      }
+
+      .theme-btn--effect {
+        display: block;
+        left: 4px;
+        box-shadow: 0.2px 0.5px 1px $g-600-trans,
+          inset 0.5px 0px 2px $g-500-trans;
+        .theme-icon {
+          display: block;
+          @include theme-icon($light-theme: true);
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        @include responsive(mobile) {
+          left: 2px;
+        }
+      }
     }
   }
 
   .nav-menu {
-    display: flex;
-    margin-left: auto;
-
+    // margin: auto 12px;
+    
     .menu-toggle {
-      display: none;
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
     }
-
+    
     .menu-list {
-      display: flex;
+      display: none;
       flex-wrap: wrap;
       justify-content: space-between;
       margin: 0 1rem;
@@ -48,70 +144,5 @@
       display: none;
     }
 
-    @include responsive(mobile) {
-      //   position: absolute;
-      //   height: 100dvh;
-      //   display: flex;
-      //   margin-left: auto;
-      //   right: 0;
-      //   top: 0;
-
-      .menu-toggle {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        width: 2.1rem;
-        height: 2.1rem;
-        outline: 2px solid $g-500;
-        border-radius: 8px;
-
-        .bar {
-          background-color: $g-500;
-          width: 70%;
-          height: 2px;
-          margin: 2px 0;
-        }
-      }
-
-      .menu-list {
-        position: absolute;
-        display: none;
-        background-color: #fff;
-        padding: 0.6rem .75rem;
-        border-radius: 12px;
-        top: 12%;
-        left: 50%;
-        flex: 1;
-        z-index: 99;
-        width: 80dvw;
-        margin: 0;
-        transform: translate(-50%, 0px);
-        box-shadow: 0 1px 5px $g-700;
-        transition: all 1s linear;
-        &.show {
-          display: flex;
-        }
-      }
-
-      .menu-backdrop {
-        position: absolute;
-        display: none;
-        z-index: 30;
-        top: 0;
-        right: 0;
-        width: 100dvw;
-        height: 100%;
-        background-color: transparent;
-        opacity: 10%;
-        backdrop-filter: blur(6px);
-
-        &.show {
-          display: block;
-        }
-      }
-    }
   }
 }
