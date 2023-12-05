@@ -26,6 +26,24 @@
   }
 }
 
+@mixin theme-icon($light-theme: true) {
+  @if $light-theme {
+    background: url("../../assets/icons/day.svg");
+  } @else {
+    background: url("../../assets/icons/cloudy.svg");
+  }
+}
+
+@mixin theme-color($dark-theme: true) {
+  @if $dark-theme {
+    background-color: $bg-color-dark;
+    color: $font-colour-dark;
+  } @else {
+    background-color: $bg-color;
+    color: $font-colour;
+  }
+}
+
 .cyp-row {
   --cyp-gutter-x: 1.5rem;
   --cyp-gutter-y: 0;

@@ -19,6 +19,7 @@ $g-700: #495057;
 $g-800: #343a40;
 $g-900: #0e0f0f;
 $black:    #000;
+$dark: #212121;
 
 
 $white-trans:    #ffffffef;
@@ -32,3 +33,9 @@ $g-700-trans: #495057ef;
 $g-800-trans: #343a40ef;
 $g-900-trans: #0e0f0fef;
 $black-trans:    #000;
+
+//  WEBSITE THEME
+$bg-color: $white;
+$font-colour: $g-900;
+$bg-color-dark: $dark;
+$font-colour-dark: $g-100;

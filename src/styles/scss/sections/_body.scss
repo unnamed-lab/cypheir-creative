@@ -1,0 +1,6 @@
+@use '../custom' as *;
+
+.main_body {
+    background-color: $white;
+    min-height: 90dvh;
+}

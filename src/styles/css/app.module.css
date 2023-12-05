@@ -180,4 +180,9 @@
   margin-block-end: calc(var(--heading-space) / 0.5);
 }
 
-/*# sourceMappingURL=app.css.map */
+.main_body {
+  background-color: #fff;
+  min-height: 90dvh;
+}
+
+/*# sourceMappingURL=app.module.css.map */

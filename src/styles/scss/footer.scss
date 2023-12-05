@@ -1,0 +1,89 @@
+@use "./custom" as *;
+@use "./components/mixins" as *;
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid $g-600;
+  &.dark {
+    @include theme-color($dark-theme: true);
+    transition: all 500ms ease-in-out 200ms;
+    border-top: 1px solid $g-200;
+
+    .footer-social {
+      .social-icon {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+        background-color: $g-100;
+        padding: 4px;
+
+        img {
+          margin: 2px auto;
+          width: 16px;
+        }
+      }
+    }
+  }
+
+  @include responsive(mobile) {
+    flex-direction: column;
+    
+  padding-top: .75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: .5rem;
+  }
+
+  .footer-credits {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+
+    span {
+      font-weight: 500;
+      color: $cypheir-main;
+    }
+
+    @include responsive(mobile) {
+      font-size: 13px;
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+
+    .social-icon {
+      margin: auto 12px;
+      width: 20px;
+      height: 20px;
+    }
+
+    @include responsive(mobile) {
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      margin-right: auto;
+      .social-icon {
+        margin: auto 9px;
+        width: 16px;
+        height: 16px;
+
+        img {
+            width: 13px;
+            height: 13px;
+        }
+      }
+    }
+  }
+}
