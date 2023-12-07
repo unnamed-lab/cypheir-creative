@@ -1,3 +1,13 @@
+@keyframes sidebar-in {
+  0% {
+    left: -40%;
+    transition: left 1s ease;
+  }
+  100% {
+    left: 0;
+    transition: left 1s ease;
+  }
+}
 .cyp-row {
   --cyp-gutter-x: 1.5rem;
   --cyp-gutter-y: 0;

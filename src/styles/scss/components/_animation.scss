@@ -1,1 +1,13 @@
-@use '../custom' as *;
+@use "../custom" as *;
+
+@keyframes sidebar-in {
+  0% {
+    left: -40%;
+    transition: left 1s ease;
+  }
+
+  100% {
+    left: 0;
+    transition: left 1s ease;
+  }
+}
