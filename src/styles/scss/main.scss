@@ -141,7 +141,6 @@ li {
         color: $black;
 
         .company {
-          margin: -10px 0;
           display: block;
           font-size: calc(var(--header-size) * 1.618);
           text-transform: capitalize;
@@ -149,7 +148,6 @@ li {
 
         .project {
           display: block;
-          margin: -15px 0;
           font-weight: 800;
           color: $cypheir-main;
           font-size: calc(var(--header-size) * 1.618 * 1.4);
@@ -166,6 +164,7 @@ li {
         display: block;
         font-weight: 300;
         font-size: 12px;
+        margin: 8px 0;
       }
     }
 

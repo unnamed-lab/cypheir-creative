@@ -135,11 +135,11 @@
 @keyframes sidebar-in {
   0% {
     left: -40%;
-    transition: left 1s ease;
+    transition: left 500ms ease;
   }
   100% {
     left: 0;
-    transition: left 1s ease;
+    transition: left 500ms ease;
   }
 }
 .navbar {
@@ -224,7 +224,7 @@
   padding: 3px;
   background-color: #fff;
   border-radius: 50%;
-  transition: all 1s ease-in-out 300ms;
+  transition: all 500ms ease-in-out 300ms;
 }
 .navbar .nav-theme-setting .theme-btn .theme-btn--effect .theme-icon {
   width: 14px;
@@ -279,7 +279,7 @@
 .navbar .nav-menu .menu-container.show {
   display: block;
   left: 0;
-  animation: sidebar-in 1s ease;
+  animation: sidebar-in 500ms ease;
 }
 .navbar .nav-menu .menu-container.dark {
   background-color: #212121;

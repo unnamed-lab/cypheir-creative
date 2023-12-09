@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap");
 .cyp-row {
   --cyp-gutter-x: 1.5rem;
   --cyp-gutter-y: 0;
@@ -346,14 +347,12 @@ li {
   color: #000;
 }
 .hero-container .hero-container__text .text-container .hero-header .company {
-  margin: -10px 0;
   display: block;
   font-size: calc(var(--header-size) * 1.618);
   text-transform: capitalize;
 }
 .hero-container .hero-container__text .text-container .hero-header .project {
   display: block;
-  margin: -15px 0;
   font-weight: 800;
   color: #1ca7ec;
   font-size: calc(var(--header-size) * 1.618 * 1.4);
@@ -368,6 +367,7 @@ li {
   display: block;
   font-weight: 300;
   font-size: 12px;
+  margin: 8px 0;
 }
 .hero-container .hero-container__text .extra-container {
   display: flex;
