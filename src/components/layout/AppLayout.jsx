@@ -9,7 +9,7 @@ function AppLayout() {
   return (
     <>
       <NavigationBar setTheme={setThemeMode} />
-      <Outlet />
+      <Outlet context={themeMode}/>
       <Footer getTheme={themeMode} />
     </>
   );

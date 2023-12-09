@@ -1,6 +1,14 @@
-@use '../custom' as *;
+@use "../custom" as *;
+@use "../components/mixins" as *;
 
 .main_body {
-    background-color: $white;
-    min-height: 90dvh;
+  display: block;
+  background-color: $white;
+  min-height: 90dvh;
+  padding: 2rem 15dvw;
+
+  @include responsive(mobile) {
+    padding: 1rem;
+  }
 }
+ 

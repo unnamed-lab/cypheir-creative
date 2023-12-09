@@ -1,31 +1,31 @@
 @use "./custom" as *;
 @use "./components/typography" as *;
+@use "./components/button" as *;
+@use "./components/mixins" as *;
 
 html {
-    scroll-behavior: smooth;
-    scrollbar-width: 6px;
-    max-width: 100dvw;
-    min-height: 100dvh;
-    overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: 6px;
+  max-width: 100dvw;
+  min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
-    
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
-
 ::-webkit-scrollbar-thumb {
-    background-color: #aaa;
-    border-radius: 6px;
+  background-color: #aaa;
+  border-radius: 6px;
 
-    &:hover {
-        background-color: #ccc;
-    }
+  &:hover {
+    background-color: #ccc;
+  }
 }
 body {
   margin: 0;
@@ -35,33 +35,166 @@ body {
   scrollbar-color: #888;
 }
 
+main,
+section {
+  transition: all 500ms linear;
+  &.dark {
+    background-color: $black;
+    color: $white;
+  }
+}
+
 div {
   padding: 0;
 }
 
 img {
-    width: inherit;
+  width: inherit;
 }
 
 a {
-    font-weight: 500;
-    text-decoration: none;
-    color: $g-600;
-    transition: all 500ms linear;
+  font-weight: 500;
+  text-decoration: none;
+  color: $g-600;
+  transition: all 500ms linear;
 
-    &:hover {
-        color: $g-800;
-    }
+  &:hover {
+    color: $g-800;
+  }
 
-    &:active {
-        color: $cypheir-sub;
-    }
+  &:active {
+    color: $cypheir-sub;
+  }
 
-    &:focus {
-        color: $cypheir-main;
-    }
+  &:focus {
+    color: $cypheir-main;
+  }
 }
 
 li {
-    list-style: none;
+  list-style: none;
+}
+
+.hero-container {
+  display: flex;
+
+  @include responsive(mobile) {
+    padding: 0 1rem;
+    flex-direction: column-reverse;
+  }
+
+  &.dark {
+    color: $white;
+    .hero-container__text {
+      .text-container {
+        .hero-header {
+          color: $white;
+          .company {
+            color: $white;
+          }
+
+          .project {
+            color: $cypheir-main;
+            text-shadow: 2px 1px 0 $white;
+          }
+        }
+        .hero-subheading {
+          color: $g-100;
+        }
+
+        .hero-description {
+        }
+      }
+
+      .extra-container {
+        display: flex;
+        width: fit-content;
+        justify-content: space-between;
+        margin: 18px 0;
+
+        .btn {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+
+  .hero-container__text {
+    display: block;
+    width: 50%;
+
+    @include responsive(mobile) {
+      width: 100%;
+    }
+
+    .text-container {
+      --header-size: 2.25rem;
+
+      @include responsive(mobile) {
+        --header-size: 1.6rem;
+      }
+
+      .hero-header {
+        cursor: default;
+        display: block;
+        font-size: var(--header-size);
+        color: $black;
+
+        .company {
+          margin: -10px 0;
+          display: block;
+          font-size: calc(var(--header-size) * 1.618);
+          text-transform: capitalize;
+        }
+
+        .project {
+          display: block;
+          margin: -15px 0;
+          font-weight: 800;
+          color: $cypheir-main;
+          font-size: calc(var(--header-size) * 1.618 * 1.4);
+          text-shadow: 7px 5px 0 $g-900;
+          text-transform: capitalize;
+        }
+      }
+      .hero-subheading {
+        color: $g-600;
+        letter-spacing: 1.5px;
+      }
+
+      .hero-description {
+        display: block;
+        font-weight: 300;
+        font-size: 12px;
+      }
+    }
+
+    .extra-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 18px 0;
+
+      @include responsive(desktop) {
+        width: fit-content;
+      }
+
+      
+      .btn {
+          margin-right: 16px;
+
+          @include responsive(mobile) {
+            margin-left: auto;
+            margin-right: auto !important;
+          }
+      }
+    }
+  }
+
+  .hero-container__image {
+    display: block;
+    padding: 1rem;
+    img {
+      width: -webkit-fill-available;
+    }
+  }
 }

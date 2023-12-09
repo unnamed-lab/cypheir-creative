@@ -1,1 +1,46 @@
-@use '../custom' as *;
+@use "../custom" as *;
+
+.btn {
+  border-radius: 18px;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: $black;
+  background-color: $g-100;
+
+  &:hover {
+    background-color: $g-300;
+  }
+
+  &:focus {
+    outline: 1px solid $cypheir-main;
+    background-color: $g-200;
+  }
+
+  &:active {
+    background-color: $g-400;
+    color: $black;
+  }
+
+  &.primary-btn {
+    background-color: $cypheir-main;
+    color: $white;
+
+    &:hover {
+      outline: 1px solid $cypheir-main;
+      background-color: transparent;
+      color: $white;
+    }
+
+    &:focus {
+      outline: 2px solid $cypheir-main;
+      background-color: transparent;
+      color: $white;
+    }
+
+    &:active {
+      outline: 1px solid $cypheir-main;
+      background-color: $cypheir-sub;
+      color: $white;
+    }
+  }
+}
