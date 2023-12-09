@@ -88,7 +88,7 @@
         padding: 3px;
         background-color: $white;
         border-radius: 50%;
-        transition: all 1s ease-in-out 300ms;
+        transition: all 500ms ease-in-out 300ms;
 
         .theme-icon {
           width: 14px;
@@ -148,7 +148,7 @@
       &.show {
         display: block;
         left: 0;
-        animation: sidebar-in 1s ease;
+        animation: sidebar-in 500ms ease;
       }
 
       &.dark {

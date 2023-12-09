@@ -3,11 +3,11 @@
 @keyframes sidebar-in {
   0% {
     left: -40%;
-    transition: left 1s ease;
+    transition: left 500ms ease;
   }
 
   100% {
     left: 0;
-    transition: left 1s ease;
+    transition: left 500ms ease;
   }
 }
