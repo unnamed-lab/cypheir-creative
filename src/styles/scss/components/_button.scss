@@ -1,8 +1,11 @@
 @use "../custom" as *;
 
 .btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
   border-radius: 18px;
-  padding: 8px 16px;
+  padding: 6px 14px;
   font-size: 16px;
   color: $black;
   background-color: $g-100;
@@ -41,6 +44,24 @@
       outline: 1px solid $cypheir-main;
       background-color: $cypheir-sub;
       color: $white;
+    }
+  }
+
+  &.icon-btn {
+    border-radius: 50%;
+    padding: 4px;
+    outline: 2px solid $cypheir-main;
+    background-color: transparent;
+
+    &.dark {
+    svg {
+      fill: $white;
+    }
+    }
+
+    svg {
+      width: 2rem;
+      height: 2em;
     }
   }
 }

@@ -1,14 +1,25 @@
 @use "../custom" as *;
 @use "../components/mixins" as *;
 
-.main_body {
+.hero_body {
   display: block;
   background-color: $white;
-  min-height: 90dvh;
+  min-height: 60dvh;
   padding: 2rem 15dvw;
 
   @include responsive(mobile) {
     padding: 1rem;
   }
 }
- 
+
+.service_body {
+  display: block;
+  background-color: $white;
+  padding: 1rem 7.5dvw;
+  border-top: 1px solid $black;
+
+  @include responsive(mobile) {
+    display: none;
+  }
+
+}

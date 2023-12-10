@@ -95,7 +95,7 @@ li {
 
           .project {
             color: $cypheir-main;
-            text-shadow: 2px 1px 0 $white;
+            text-shadow: 3px 3px 0px $black, 7px 5px 0 $white;
           }
         }
         .hero-subheading {
@@ -103,6 +103,7 @@ li {
         }
 
         .hero-description {
+          color: $g-100;
         }
       }
 
@@ -122,6 +123,8 @@ li {
   .hero-container__text {
     display: block;
     width: 50%;
+    margin-bottom: 1rem;
+    transition: all 500ms ease;
 
     @include responsive(mobile) {
       width: 100%;
@@ -144,6 +147,7 @@ li {
           display: block;
           font-size: calc(var(--header-size) * 1.618);
           text-transform: capitalize;
+          line-height: 1.3;
         }
 
         .project {
@@ -151,11 +155,13 @@ li {
           font-weight: 800;
           color: $cypheir-main;
           font-size: calc(var(--header-size) * 1.618 * 1.4);
-          text-shadow: 7px 5px 0 $g-900;
+          text-shadow: 1.5px 1.5px 0px $white, 7px 5px 0 $g-900;
           text-transform: capitalize;
+          line-height: 1.3;
         }
       }
       .hero-subheading {
+        margin-top: 1.15rem;
         color: $g-600;
         letter-spacing: 1.5px;
       }
@@ -171,29 +177,84 @@ li {
     .extra-container {
       display: flex;
       justify-content: space-between;
-      margin: 18px 0;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
 
       @include responsive(desktop) {
         width: fit-content;
       }
 
-      
-      .btn {
-          margin-right: 16px;
+      @include responsive(mobile) {
+        width: 100% !important;
+        justify-content: center !important;
+      }
 
-          @include responsive(mobile) {
-            margin-left: auto;
-            margin-right: auto !important;
-          }
+      .btn {
+        margin-right: 16px;
       }
     }
   }
 
   .hero-container__image {
+    position: relative;
+        width: -webkit-fill-available;
     display: block;
+    margin-left: auto;
     padding: 1rem;
+    transition: all 500ms ease;
+
     img {
+      position: relative;
+      z-index: 30;
       width: -webkit-fill-available;
+    }
+
+    .hero-container__image__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      width: 100%;
+      height: 100%;
+      opacity: 10%;
+    }
+  }
+}
+
+.service-container {
+  display: flex;
+  width: 100%;
+
+  @include responsive(mobile) {
+    display: none;
+  }
+
+  .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding-inline-start: 0;
+    justify-content: space-evenly;
+
+    .service-item {
+      margin: 0 auto;
+
+      .service-link {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        text-decoration: none;
+        color: $black;
+        font-size: 20px;
+        margin: 0 1rem;
+
+        svg {
+          width: 28px;
+          height: 28px;
+          margin-right: 1rem;
+        }
+      }
     }
   }
 }
