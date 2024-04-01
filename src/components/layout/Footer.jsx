@@ -12,17 +12,16 @@ function Footer({ getTheme }) {
       <footer className={`footer ${getTheme}`}>
         <div className="footer-credits">
           Copyright &copy;{year} All rights reserved. Made by{" "}
-          <span>Unnamed</span>, <span>Cypheir</span> and many others with love.
-          💙
+          <span>Unnamed</span> and many others with love. 💙
         </div>
         <div className="footer-social">
           <a
-            href="#"
+            href="https://twitter.com/cypheir_tech"
             target="_blank"
             rel="noreferrer noopener"
             className="social-icon"
           >
-            <img src={xLogo} alt="X/Twitter" />
+            <img src={xLogo} alt="Visit Cypheir's X(Twitter) Page" />
           </a>
           <a
             href="#"
@@ -41,7 +40,7 @@ function Footer({ getTheme }) {
             <img src={gitHub} alt="GitHub" />
           </a>
           <a
-            href="#"
+            href="https://www.cypheir.xyz"
             target="_blank"
             rel="noreferrer noopener"
             className="social-icon"
