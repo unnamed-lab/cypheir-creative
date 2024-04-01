@@ -18,7 +18,7 @@ function Home() {
     <>
       <main>
         <Hero isDarkTheme={getTheme} randLook={randLook} />
-        <Service />
+        {/* <Service /> */}
       </main>
     </>
   );
