@@ -1,5 +1,5 @@
-import type { Metadata, ResolvingMetadata } from "next";
-import { Poppins } from "next/font/google";
+import type { Metadata } from "next";
+// import { Poppins } from "next/font/google";
 import "../styles/css/globals.css";
 import xLogo from "../assets/icons/x.svg";
 import gitHub from "../assets/icons/github.svg";
@@ -10,11 +10,11 @@ import Image from "next/image";
 import Head from "next/head";
 import { WebVitals } from "./web-vitals";
 
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  display: "swap",
-});
+// const poppins = Poppins({
+//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+//   subsets: ["latin"],
+//   display: "swap",
+// });
 
 const webData = {
   title: "Cypheir Creative: An Open-Source Hub for Designers & Devs 🌐🎨💻",
@@ -69,14 +69,9 @@ const webData = {
 
 type Props = {
   params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = params;
   const siteURL = webData.url;
   return {
@@ -119,7 +114,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body>
         <Head>
           <link
             rel="icon"
@@ -142,7 +137,7 @@ export default function RootLayout({
             sizes="<generated>"
           />
         </Head>
-        <WebVitals />
+        {/* <WebVitals /> */}
         {children}
         <Footer />
       </body>

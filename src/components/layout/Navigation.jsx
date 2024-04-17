@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "../../styles/css/nav.css";
 import logo from "/logo.svg";
 import logoWhite from "/logo_white.svg"; 
+import Image from "next/image";
 
 function NavigationBar({ setTheme }) {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
@@ -75,7 +76,7 @@ function NavigationBar({ setTheme }) {
 
           <div className="nav-brand">
             <div className="nav-brand--logo">
-              <img src={logoTheme} alt="Cypheir" />
+              <Image src={logoTheme} alt="Cypheir" />
             </div>
           </div>
 

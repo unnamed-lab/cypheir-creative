@@ -3,6 +3,7 @@ import xLogo from "../../assets/icons/x.svg";
 import gitHub from "../../assets/icons/github.svg";
 import globe from "../../assets/icons/globe.svg";
 import discord from "../../assets/icons/discord.svg";
+import Image from "next/image";
 
 function Footer({ getTheme }) {
   const year = new Date().getFullYear();
@@ -21,7 +22,12 @@ function Footer({ getTheme }) {
             rel="noreferrer noopener"
             className="social-icon"
           >
-            <img src={xLogo} alt="Visit Cypheir's X(Twitter) Page" />
+            <Image
+              src={xLogo}
+              width={100}
+              height={100}
+              alt="Visit Cypheir's X(Twitter) Page"
+            />
           </a>
           <a
             href="#"
@@ -29,7 +35,7 @@ function Footer({ getTheme }) {
             rel="noreferrer noopener"
             className="social-icon"
           >
-            <img src={discord} alt="Discord" />
+            <Image src={discord} width={100} height={100} alt="Discord" />
           </a>
           <a
             href="https://github.com/unnamed-lab/cypheir-creative"
@@ -37,7 +43,7 @@ function Footer({ getTheme }) {
             rel="noreferrer noopener"
             className="social-icon"
           >
-            <img src={gitHub} alt="GitHub" />
+            <Image src={gitHub} width={100} height={100} alt="GitHub" />
           </a>
           <a
             href="https://www.cypheir.xyz"
@@ -45,7 +51,7 @@ function Footer({ getTheme }) {
             rel="noreferrer noopener"
             className="social-icon"
           >
-            <img src={globe} alt="Web" />
+            <Image src={globe} width={100} height={100} alt="Web" />
           </a>
         </div>
       </footer>
