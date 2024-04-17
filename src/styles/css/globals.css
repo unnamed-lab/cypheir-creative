@@ -1,3 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes sidebar-in {
+  0% {
+    left: -40%;
+    transition: left 500ms ease;
+  }
+  100% {
+    left: 0;
+    transition: left 500ms ease;
+  }
+}
+.btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 18px;
+  padding: 6px 14px;
+  font-size: 16px;
+  color: #000;
+  background-color: #f8f9fa;
+}
+.btn:hover {
+  background-color: #dee2e6;
+}
+.btn:focus {
+  outline: 1px solid #1ca7ec;
+  background-color: #e9ecef;
+}
+.btn:active {
+  background-color: #ced4da;
+  color: #000;
+}
+.btn.primary-btn {
+  background-color: #1ca7ec;
+  color: #fff;
+}
+.btn.primary-btn:hover {
+  outline: 1px solid #1ca7ec;
+  background-color: transparent;
+  color: #fff;
+}
+.btn.primary-btn:focus {
+  outline: 2px solid #1ca7ec;
+  background-color: transparent;
+  color: #fff;
+}
+.btn.primary-btn:active {
+  outline: 1px solid #1ca7ec;
+  background-color: #88d6fd;
+  color: #fff;
+}
+.btn.icon-btn {
+  border-radius: 50%;
+  padding: 4px;
+  outline: 2px solid #1ca7ec;
+  background-color: transparent;
+}
+.btn.icon-btn.dark svg {
+  fill: #fff;
+}
+.btn.icon-btn svg {
+  width: 2rem;
+  height: 2em;
+}
+
 .cyp-row {
   --cyp-gutter-x: 1.5rem;
   --cyp-gutter-y: 0;
@@ -132,16 +200,134 @@
   }
 }
 
-@keyframes sidebar-in {
-  0% {
-    left: -40%;
-    transition: left 500ms ease;
-  }
-  100% {
-    left: 0;
-    transition: left 500ms ease;
+:root {
+  --heading-space: 0.15em;
+  --heading-font: 1.75em;
+}
+@media (max-width: 767px) {
+  :root {
+    --heading-space: 0.11em;
+    --heading-font: 1.5em;
   }
 }
+:root * {
+  font-family: "Poppins", "Century Gothic", sans-serif;
+}
+:root p {
+  font-size: 13px;
+  font-weight: 400;
+}
+:root h1 {
+  font-size: var(--heading-font);
+  margin-block-start: var(--heading-space);
+  margin-block-end: var(--heading-space);
+}
+:root h2 {
+  font-size: calc(var(--heading-font) - 0.162em);
+  margin-block-start: calc(var(--heading-space) / 0.9);
+  margin-block-end: calc(var(--heading-space) / 0.9);
+}
+:root h3 {
+  font-size: calc(var(--heading-font) - 0.243em);
+  margin-block-start: calc(var(--heading-space) / 0.8);
+  margin-block-end: calc(var(--heading-space) / 0.8);
+}
+:root h4 {
+  font-size: calc(var(--heading-font) - 0.486em);
+  margin-block-start: calc(var(--heading-space) / 0.7);
+  margin-block-end: calc(var(--heading-space) / 0.7);
+}
+:root h5 {
+  font-size: calc(var(--heading-font) - 0.6075em);
+  margin-block-start: calc(var(--heading-space) / 0.6);
+  margin-block-end: calc(var(--heading-space) / 0.6);
+}
+:root h6 {
+  font-size: calc(var(--heading-font) - 0.648em);
+  margin-block-start: calc(var(--heading-space) / 0.5);
+  margin-block-end: calc(var(--heading-space) / 0.5);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid #6c757d;
+}
+.footer.dark {
+  background-color: #212121;
+  color: #f8f9fa;
+  transition: all 500ms ease-in-out 200ms;
+  border-top: 1px solid #e9ecef;
+}
+.footer.dark .footer-social .social-icon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  padding: 4px;
+}
+.footer.dark .footer-social .social-icon img {
+  margin: 2px auto;
+  width: 16px;
+}
+@media (max-width: 767px) {
+  .footer {
+    flex-direction: column;
+    padding-top: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+.footer .footer-credits {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+.footer .footer-credits span {
+  font-weight: 500;
+  color: #1ca7ec;
+}
+@media (max-width: 767px) {
+  .footer .footer-credits {
+    font-size: 13px;
+  }
+}
+.footer .footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: auto;
+}
+.footer .footer-social .social-icon {
+  margin: auto 12px;
+  width: 20px;
+  height: 20px;
+}
+@media (max-width: 767px) {
+  .footer .footer-social {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-right: auto;
+  }
+  .footer .footer-social .social-icon {
+    margin: auto 9px;
+    width: 16px;
+    height: 16px;
+  }
+  .footer .footer-social .social-icon img {
+    width: 13px;
+    height: 13px;
+  }
+}
+
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -444,4 +630,68 @@
   display: block;
 }
 
-/*# sourceMappingURL=nav.css.map */
+.error {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: -webkit-fill-available;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-200deg, #fff, #f8f9fa, #ced4da, #1ca7ec);
+}
+.error .error_container {
+  display: grid;
+  grid-template-columns: 1fr 1.125fr;
+  width: 60%;
+  gap: 2rem;
+}
+@media (max-width: 767px) {
+  .error .error_container {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+}
+.error .error_container .error_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.error .error_container .error_item h1 {
+  font-size: 2.75rem;
+  font-weight: 600;
+}
+.error .error_container .error_item h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.error .error_container .error_item p {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+.error .error_container .error_item a {
+  color: #1ca7ec;
+}
+.error .error_container .error_item a:hover, .error .error_container .error_item a:focus {
+  color: #88d6fd;
+}
+
+:root ::-webkit-scrollbar {
+  width: 4px;
+}
+:root ::-webkit-scrollbar-thumb {
+  background: #1ca7ec;
+}
+:root ::-webkit-scrollbar-thumb:hover {
+  background: #88d6fd;
+}
+:root ::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+/*# sourceMappingURL=globals.css.map */
