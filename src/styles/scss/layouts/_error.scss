@@ -1,0 +1,60 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.error {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: -webkit-fill-available;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-200deg, $white, $g-100, $g-400, $cypheir-main);
+
+  .error_container {
+    display: grid;
+    grid-template-columns: 1fr 1.125fr;
+    width: 60%;
+    gap: 2rem;
+
+    @include responsive(mobile) {
+      width: 90%;
+      grid-template-columns: 1fr;
+    }
+
+    .error_item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      h1 {
+        font-size: 2.75rem;
+        font-weight: 600;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 1.15rem;
+        margin-bottom: 0.75rem;
+      }
+
+      a {
+        color: $cypheir-main;
+
+        &:hover,
+        &:focus {
+          color: $cypheir-sub;
+        }
+      }
+    }
+  }
+}

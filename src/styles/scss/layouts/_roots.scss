@@ -1,0 +1,20 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+:root {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $cypheir-main;
+
+    &:hover {
+      background: $cypheir-sub;
+    }
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $g-100;
+  }
+}

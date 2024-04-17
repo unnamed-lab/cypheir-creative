@@ -1,0 +1,347 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+@use "../components/animation" as *;
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 100dvw;
+  padding: 2px 1.5rem;
+  width: -webkit-fill-available;
+  box-shadow: 0 0.01px 1px $g-700;
+  background-color: $bg-color;
+  color: $font-colour;
+  transition: all 1s linear;
+
+  &.dark {
+    @include theme-color($dark-theme: true);
+    transition: all 500ms ease-in-out 300ms;
+  }
+
+  .nav-brand {
+    cursor: pointer;
+    align-self: center;
+    max-width: 6rem;
+    margin: auto;
+
+    .nav-brand--logo {
+      width: 100%;
+      transition: all 500ms linear 200ms;
+    }
+  }
+
+  .nav-theme-setting {
+    padding: 0 0.25rem;
+    max-width: 4rem;
+    display: flex;
+    height: 1.5rem;
+
+    .theme-btn {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background-color: $g-400-trans;
+      width: 3rem;
+      padding: 4px;
+      border-radius: 18px;
+      box-shadow: 0 0 0.5px $g-200-trans, inset 0 1px 1.5px $g-600-trans;
+      transition: all 500ms linear;
+
+      @include responsive(mobile) {
+        width: 1rem;
+      }
+
+      &.dark {
+        background-color: $g-700-trans;
+        box-shadow: 0 0 0.5px $g-200-trans, inset 0 1px 1.5px $g-800-trans;
+
+        .theme-btn--effect {
+          left: 32px;
+          display: block;
+          box-shadow: 0.2px 0.5px 1px $g-600-trans,
+            inset -0.5px 0px 2px $g-500-trans !important;
+
+          @include responsive(mobile) {
+            left: 2px;
+          }
+          .theme-icon {
+            display: block;
+            @include theme-icon($light-theme: false);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+
+      input[type="checkbox"] {
+        display: none;
+        width: -webkit-fill-available;
+      }
+
+      .theme-btn--effect {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        padding: 3px;
+        background-color: $white;
+        border-radius: 50%;
+        transition: all 500ms ease-in-out 300ms;
+
+        .theme-icon {
+          width: 14px;
+          height: 14px;
+          transition: all 500ms cubic-bezier(0.6, -0.28, 0.74, 0.05) 100ms;
+        }
+      }
+
+      .theme-btn--effect {
+        display: block;
+        left: 4px;
+        box-shadow: 0.2px 0.5px 1px $g-600-trans,
+          inset 0.5px 0px 2px $g-500-trans;
+        .theme-icon {
+          display: block;
+          @include theme-icon($light-theme: true);
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        @include responsive(mobile) {
+          left: 2px;
+        }
+      }
+    }
+  }
+
+  .nav-menu {
+    --border-radius: 18px;
+
+    .menu-toggle {
+      cursor: pointer;
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .menu-container {
+      position: absolute;
+      z-index: 99;
+      top: 0;
+      left: -40%;
+      display: none;
+      width: 20dvw;
+      height: 100dvh;
+      padding: 32px 24px;
+      background-color: $white;
+      border-radius: 0 18px 18px 0;
+      box-shadow: 0.25px 0.25px 8px $g-400-trans;
+      outline: 0.025px solid $g-300;
+
+      @include responsive(mobile) {
+        width: 55dvw;
+      }
+
+      &.show {
+        display: block;
+        left: 0;
+        animation: sidebar-in 500ms ease;
+      }
+
+      &.dark {
+        @include theme-color($dark-theme: true);
+        outline: 0.025px solid $g-700;
+        box-shadow: 0.25px 0.25px 8px $g-800-trans;
+
+        .menu-header {
+          border-left: 4px solid $g-100;
+        }
+
+        .invite-header {
+          display: block;
+          margin: 2rem 0;
+
+          .invite-btn {
+            width: -webkit-fill-available;
+            background-color: $g-100;
+            border-radius: calc(var(--border-radius) - 4px);
+            padding: 12px;
+            font-weight: 600;
+            color: $black;
+
+            &:hover {
+              background-color: $g-100;
+              box-shadow: inset 0 0.5px 2px $g-800;
+            }
+          }
+        }
+
+        .lead-header {
+          display: block;
+          margin: 2rem 0;
+          border-top: 1px solid $g-400;
+
+          .lead-btn {
+            width: -webkit-fill-available;
+            background-color: $cypheir-main;
+            border-radius: calc(var(--border-radius) - 4px);
+            padding: 12px;
+            font-weight: 600;
+            color: $white;
+
+            &:hover {
+              background-color: $cypheir-sub;
+              box-shadow: inset 0 0.5px 2px $g-800;
+            }
+          }
+        }
+
+        .menu-list {
+          display: block;
+
+          .menu-option {
+            &:hover {
+              background-color: $black;
+            }
+
+            .nav-link {
+              color: $white;
+
+              svg {
+                fill: $white;
+
+                path {
+                  fill: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .menu-header {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+        border-left: 4px solid $dark;
+        padding-left: 0.75rem;
+        margin-bottom: 2rem;
+        transition: background-color 1s ease;
+        border-radius: 0 12px 12px 0;
+
+        .company-name {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+
+      .invite-header {
+        display: block;
+        width: 100%;
+        margin: 1.5rem 0;
+
+        .invite-btn {
+          cursor: pointer;
+          display: block;
+          width: -webkit-fill-available;
+          background-color: $dark;
+          border-radius: calc(var(--border-radius) - 4px);
+          padding: 12px;
+          font-weight: 600;
+          color: $white;
+          text-align: center;
+          transition: all 500ms linear;
+
+          &:hover {
+            background-color: $g-900;
+            box-shadow: inset 0 0.5px 2px $g-100;
+          }
+        }
+      }
+
+      .lead-header {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        margin: 1.5rem 0;
+        padding-top: 2rem;
+        border-top: 1px solid $dark;
+
+        .lead-btn {
+          display: block;
+          width: -webkit-fill-available;
+          background-color: $cypheir-main;
+          border-radius: calc(var(--border-radius) - 4px);
+          padding: 12px;
+          font-weight: 600;
+          color: $white;
+          text-align: center;
+          transition: all 500ms linear;
+
+          &:hover {
+            background-color: $cypheir-sub;
+            box-shadow: inset 0 0.5px 2px $g-100;
+          }
+        }
+      }
+
+      .menu-list {
+        display: block;
+        margin: 1rem 0;
+        padding-inline-start: 0;
+
+        .menu-option {
+          cursor: pointer;
+          padding: 0.5rem 1rem;
+          margin: 18px 0;
+          border-radius: 6px;
+
+          &:hover {
+            background-color: $g-800;
+            .nav-link {
+              color: $white;
+            }
+          }
+
+          .nav-link {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 14px;
+            text-transform: capitalize;
+
+            svg {
+              fill: $dark;
+              width: 20px;
+              height: 20px;
+              margin-right: 0.5rem;
+
+              path {
+                fill: $dark;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .menu-backdrop {
+      position: absolute;
+      display: none;
+      z-index: 89;
+      top: 0;
+      left: 0;
+      width: 100dvw;
+      height: 100dvh;
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+}

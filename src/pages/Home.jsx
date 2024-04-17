@@ -4,6 +4,7 @@ import app from "../styles/css/app.module.css";
 import "../styles/css/main.css";
 import devImg from "../assets/developer.svg";
 import workImg from "../assets/working.svg";
+import Image from "next/image";
 
 function Home() {
   const getTheme = useOutletContext();
@@ -136,7 +137,7 @@ function HeroImagery({ randLook }) {
   const imagery = randLook ? devImg : workImg;
   return (
     <>
-      <img src={imagery} alt="Get started" />
+      <Image src={imagery} alt="Get started" />
       <svg
         className="hero-container__image__bg"
         id="sw-js-blob-svg"
